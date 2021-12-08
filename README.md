@@ -37,5 +37,18 @@
                 all fields to default values (null / 0 / false).
     2. @AllArgsConstructor
         1. Used to generate constructor with all the arguments of entity class
-    3. @NoArgsConstuctor
+    3. @NoArgsConstructor
         1. Used to generate constructor with no arguments
+    4. @Builder
+        1. Builder can be used on class level , method level , constructor level
+        2. ClassLevel
+            1. When we make use of @Builder on class level we can build class with all attributes present in the entity
+               class
+            2. We can set values for all attributes
+        3. Constructor level
+            1. @Builder can be used on constructor as well
+            2. Builder on constructor level gives us feasibility to control the attributes on which we allow setting
+               from end user
+        4. Method level
+            1. @Builder on method level allows us to decide which attributes can be taken as input from end user and
+               attributes that we want to set on your own

@@ -35,6 +35,36 @@
 			"response": []
 		},
 		{
+			"name": "AddUser using UserDTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"jyoti\",\r\n    \"contact\":\"xyz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/add/usingUserDTO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"add",
+						"usingUserDTO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

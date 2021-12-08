@@ -1,5 +1,6 @@
 package com.jyoti.lombok.lombok.controller;
 
+import com.jyoti.lombok.lombok.entities.UserDTO;
 import com.jyoti.lombok.lombok.entities.UserEntity;
 import com.jyoti.lombok.lombok.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,11 @@ public class UserController {
     @GetMapping("/get/{id}")
     public UserEntity getUser(@PathVariable (value = "id")Long id){
        return userService.getUser(id);
+    }
+
+    @PostMapping("/add/usingUserDTO")
+    public UserEntity addUserUsingDTO(@RequestBody UserDTO userDTO){
+      return   userService.addUserUsingDTO(userDTO);
+
     }
 }

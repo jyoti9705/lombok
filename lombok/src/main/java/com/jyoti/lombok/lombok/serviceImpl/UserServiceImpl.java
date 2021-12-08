@@ -1,5 +1,6 @@
 package com.jyoti.lombok.lombok.serviceImpl;
 
+import com.jyoti.lombok.lombok.entities.UserDTO;
 import com.jyoti.lombok.lombok.entities.UserEntity;
 import com.jyoti.lombok.lombok.repository.UserRepository;
 import com.jyoti.lombok.lombok.service.UserService;
@@ -20,5 +21,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity getUser(Long id) {
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public UserEntity addUserUsingDTO(UserDTO userDTO) {
+        UserEntity userToSave = UserEntity.builder().name(userDTO.getName()).id(userDTO.getId()).contact(userDTO.getContact()).build();
+        return userRepository.save(userToSave);
     }
 }
